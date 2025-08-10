@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maahir Mitayeegiri – Portfolio</title>
+  <meta name="description" content="AI Engineer • NLP & CV – Portfolio of Maahir Mitayeegiri" />
+  <style>
+    :root{
+      --bg:#0a0a0a; --bg-soft:#111; --card:#141414; --text:#f5f5f5; --muted:#c9c9c9; --border:#262626;
+      --accent1:#fb923c; --accent2:#fb7185; --accent3:#e879f9;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica Neue,Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--text);background:radial-gradient(ellipse at top,rgba(255,100,50,.12),transparent 60%),radial-gradient(ellipse at bottom,rgba(255,0,120,.10),transparent 60%),var(--bg);}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    .border{border:1px solid var(--border)}
+    .btn{border:1px solid var(--border);border-radius:16px;padding:8px 12px;display:inline-flex;gap:8px;align-items:center;background:transparent;cursor:pointer;color:var(--text)}
+    .btn:hover{background:rgba(255,255,255,.05)}
+    .tag{font-size:12px;border:1px solid var(--border);border-radius:999px;padding:4px 8px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));border:1px solid var(--border);border-radius:20px;padding:20px}
+    header.sticky{position:sticky;top:0;z-index:20;backdrop-filter:blur(8px);background:rgba(10,10,10,.6);border-bottom:1px solid var(--border)}
+    nav a{opacity:.85}
+    nav a:hover{opacity:1}
+    h1{font-size:40px;line-height:1.1;margin:8px 0 0}
+    h2{font-size:28px;margin:0 0 8px}
+    h3{margin:0}
+    p{color:#e5e5e5}
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:16px}
+    .kpi{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--border);border-radius:16px;padding:12px}
+    .section{scroll-margin-top:96px;padding:56px 0}
+    .pill{border:1px solid var(--border);border-radius:999px;padding:8px 12px;display:inline-flex;gap:8px;align-items:center}
+    .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .between{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    .skills li{list-style:none;border:1px solid var(--border);border-radius:12px;padding:8px 12px}
+    .skills ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:0;margin:0}
+    .progress{height:8px;background:#1f1f1f;border-radius:999px;overflow:hidden}
+    .progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2),var(--accent3))}
+    .hero-grad{background:linear-gradient(90deg,var(--accent1),var(--accent2),var(--accent3));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .projects{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+    .shadow:hover{box-shadow:0 20px 40px rgba(240,171,252,.08)}
+    footer{padding:40px 0;color:#b7b7b7}
+    @media (min-width:768px){h1{font-size:64px} .kpis{grid-template-columns:repeat(4,1fr)} .two{grid-template-columns:repeat(2,1fr)} .three{grid-template-columns:repeat(3,1fr)}}
+    /* simple fade-up */
+    .reveal{opacity:0;transform:translateY(8px);animation:reveal .5s ease forwards}
+    @keyframes reveal{to{opacity:1;transform:none}}
+    /* hidden helper */
+    .hidden{display:none !important}
+  </style>
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header class="sticky">
+    <div class="container between" style="padding:12px 16px;">
+      <a href="#top" style="font-weight:700;letter-spacing:.2px">Maahir Mitayeegiri</a>
+      <nav class="row" style="gap:20px;font-size:14px">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="row">
+        <button id="themeBtn" class="btn" aria-label="Toggle theme">☀️/🌙</button>
+        <a class="btn" href="https://github.com/M-Maahir" aria-label="GitHub">GitHub</a>
+        <a class="btn" href="https://linkedin.com/in/m-maahir" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <!-- Hero -->
+    <section class="section reveal">
+      <p class="muted" style="text-transform:uppercase;letter-spacing:.2em;font-size:12px">Portfolio</p>
+      <h1>
+        <span class="hero-grad">AI Engineer • NLP & CV</span><br/>
+        Maahir Mitayeegiri
+      </h1>
+      <p style="max-width:640px;margin-top:12px">Graduate AI student building real‑time ML systems with measurable impact — from inappropriate content detection to sign language translation.</p>
+      <div class="grid kpis" style="margin-top:20px">
+        <div class="kpi"><span class="muted" style="font-size:14px">Deployed Latency</span><b>20 ms/frame</b></div>
+        <div class="kpi"><span class="muted" style="font-size:14px">Verification Acc.</span><b>92%</b></div>
+        <div class="kpi"><span class="muted" style="font-size:14px">Publications</span><b>2</b></div>
+        <div class="kpi"><span class="muted" style="font-size:14px">Stacks</span><b>PyTorch • TF</b></div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <a class="pill" href="mailto:Mmitayeegiri2024@fau.edu">📧 Mmitayeegiri2024@fau.edu</a>
+        <span class="pill">📞 +1 (561) 961‑9863</span>
+        <span class="pill">📍 USA</span>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section reveal">
+      <div class="between" style="margin-bottom:16px">
+        <h2>Projects</h2>
+      </div>
+      <div id="tagBar" class="row" style="margin-bottom:12px"></div>
+      <div id="projectsGrid" class="grid projects"></div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section reveal">
+      <h2>Skills</h2>
+      <div class="grid two" style="align-items:center">
+        <div class="skills">
+          <ul>
+            <li>Python</li>
+            <li>Java</li>
+            <li>C/C++</li>
+            <li>MATLAB</li>
+            <li>SQL</li>
+            <li>R</li>
+            <li>PyTorch</li>
+            <li>TensorFlow</li>
+            <li>Spark</li>
+            <li>LangChain</li>
+            <li>NumPy / Pandas</li>
+            <li>Matplotlib / SciPy</li>
+            <li>HTML / CSS / JS</li>
+            <li>Streamlit</li>
+            <li>Git</li>
+            <li>CUDA</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="row" style="justify-content:space-between"><b>Skill Radar (linear)</b><span class="muted" style="font-size:12px">Scaled bars</span></div>
+          <div style="margin-top:12px;display:grid;gap:10px">
+            <div><div class="between"><span class="muted">Python</span><span>92</span></div><div class="progress"><i style="width:92%"></i></div></div>
+            <div><div class="between"><span class="muted">PyTorch</span><span>85</span></div><div class="progress"><i style="width:85%"></i></div></div>
+            <div><div class="between"><span class="muted">TensorFlow</span><span>78</span></div><div class="progress"><i style="width:78%"></i></div></div>
+            <div><div class="between"><span class="muted">NLP</span><span>88</span></div><div class="progress"><i style="width:88%"></i></div></div>
+            <div><div class="between"><span class="muted">CV</span><span>84</span></div><div class="progress"><i style="width:84%"></i></div></div>
+            <div><div class="between"><span class="muted">Data Eng</span><span>72</span></div><div class="progress"><i style="width:72%"></i></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section reveal">
+      <h2>Experience</h2>
+      <div class="grid" style="gap:16px">
+        <div class="card">
+          <div class="between"><h3>AI Intern • MathWorks</h3><span class="muted" style="font-size:14px">May 2023 – Sep 2023</span></div>
+          <ul style="margin:12px 0 0 18px">
+            <li>Completed 5 modules: MATLAB, Image/Signal Processing, ML, Deep Learning</li>
+            <li>Hands‑on with classification, segmentation, regression; documented findings and optimized workflows</li>
+            <li>Built strong analysis & reporting habits for clarity and reproducibility</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section reveal">
+      <h2>Education</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>M.S. in Artificial Intelligence</h3>
+          <p class="muted">Florida Atlantic University</p>
+          <p class="muted" style="font-size:12px">Aug 2024 – May 2026</p>
+          <ul style="margin-left:18px">
+            <li>GPA: 3.89/4.0</li>
+            <li>Courses: Deep Learning, NLP, Big Data, Generative AI, LLMs, Prompt Engineering</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>M.Tech in Electronics & Communication</h3>
+          <p class="muted">Jawaharlal Nehru Technological University</p>
+          <p class="muted" style="font-size:12px">Aug 2023 – Aug 2024</p>
+          <ul style="margin-left:18px">
+            <li>Courses: Data Analytics, Adaptive Systems, High‑Performance & Parallel Computing</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>B.Tech in Electronics & Communication</h3>
+          <p class="muted">Jawaharlal Nehru Technological University</p>
+          <p class="muted" style="font-size:12px">Aug 2019 – Aug 2023</p>
+          <ul style="margin-left:18px">
+            <li>Courses: Computer Networks, Signal Processing, Design & Analysis of Algorithms</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="section reveal">
+      <h2>Publications</h2>
+      <ol style="padding-left:22px">
+        <li style="margin-bottom:10px"><b>A Deep Learning‑Based Approach for Inappropriate Content Detection and Classification of YouTube Videos</b> — <span class="muted">mst, vol. 22, no. 12, pp. 164–168, 2023</span> <a class="pill" href="https://doi.org/10.10543/f0299.2023.41841">link ↗</a></li>
+        <li><b>Sign Language Transformer using Spatial Representations</b> — <span class="muted">Engineering World, vol. 6, 2024</span> <a class="pill" href="https://wseas.com/journals/ew/2024/a42engw-018(2024).pdf">link ↗</a></li>
+      </ol>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section reveal">
+      <h2>Contact</h2>
+      <div class="grid three">
+        <a class="card shadow" href="mailto:Mmitayeegiri2024@fau.edu">
+          <div class="row"><span>📧</span>
+            <div>
+              <div class="muted" style="font-size:14px">Email</div>
+              <div><b>Mmitayeegiri2024@fau.edu</b></div>
+            </div>
+          </div>
+        </a>
+        <div class="card shadow">
+          <div class="row"><span>📞</span>
+            <div>
+              <div class="muted" style="font-size:14px">Phone</div>
+              <div><b>+1 (561) 961‑9863</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="card shadow">
+          <div class="row"><span>📍</span>
+            <div>
+              <div class="muted" style="font-size:14px">Location</div>
+              <div><b>USA</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <a class="btn" href="https://github.com/M-Maahir">GitHub</a>
+        <a class="btn" href="https://linkedin.com/in/m-maahir">LinkedIn</a>
+      </div>
+    </section>
+
+    <footer class="muted">Built with plain HTML & CSS (<i>no React</i>)</footer>
+  </main>
+
+  <script>
+    // ---- Simple dark toggle (body class) ----
+    const themeBtn = document.getElementById('themeBtn');
+    themeBtn?.addEventListener('click',()=>{
+      document.documentElement.classList.toggle('light');
+    });
+
+    // ---- Projects data + render ----
+    const projects = [
+      {id:"yt-moderation", title:"Inappropriate Content Detection for YouTube Streams", tags:["Deep Learning","Real-time","Computer Vision"], summary:"End-to-end system — data pipeline (5k+ clips), model training, and live inference with 20 ms/frame latency.", impact:[{label:"Precision",value:"90%"},{label:"Recall",value:"88%"},{label:"F1",value:"0.89"},{label:"Latency",value:"20 ms"}], links:[{href:"https://doi.org/10.10543/f0299.2023.41841",label:"Paper"}]},
+      {id:"sign-transformer", title:"Sign Language Transformer using Spatial Representations", tags:["Transformer","NLP","CV"], summary:"Joint sign→gloss and gloss→text translation on PHOENIX‑2014T with spatial‑temporal encoders.", impact:[{label:"Dataset",value:"PHOENIX‑2014T"},{label:"Tasks",value:"S2G, G2T, S2G2T"}], links:[{href:"https://wseas.com/journals/ew/2024/a42engw-018(2024).pdf",label:"Paper"}]},
+      {id:"siamese-face", title:"Siamese CNN Face Verification", tags:["Metric Learning","CNN","Contrastive Loss"], summary:"Twin‑network embeddings trained with contrastive loss; robust on <500 images with 92% verification accuracy.", impact:[{label:"Accuracy",value:"92%"},{label:"Data",value:"<500 imgs"}]},
+      {id:"gas-iot", title:"$20 Gas Leak Detection & Alerting (IoT)", tags:["IoT","Embedded","ESP‑01"], summary:"555 Timer + ESP‑01 stack that emails alerts within ~5s of leak detection; Arduino‑based firmware.", impact:[{label:"Response",value:"<5s"},{label:"Cost",value:"<$20"}]}
+    ];
+
+    const tagSet = new Set(["All"]); projects.forEach(p=>p.tags.forEach(t=>tagSet.add(t)));
+
+    const tagBar = document.getElementById('tagBar');
+    const grid = document.getElementById('projectsGrid');
+
+    function renderTags(active="All"){
+      tagBar.innerHTML = "";
+      [...tagSet].forEach(t=>{
+        const btn = document.createElement('button');
+        btn.className = 'btn';
+        if(t===active) btn.style.background = 'rgba(255,255,255,.08)';
+        btn.textContent = t; btn.onclick = ()=>{renderTags(t); renderProjects(t)};
+        tagBar.appendChild(btn);
+      });
+    }
+
+    function kpi(label,value){
+      return `<div class="kpi"><span class="muted" style="font-size:14px">${label}</span><b>${value}</b></div>`
+    }
+
+    function renderProjects(activeTag="All"){
+      grid.innerHTML = '';
+      const list = activeTag==='All' ? projects : projects.filter(p=>p.tags.includes(activeTag));
+      list.forEach(p=>{
+        const item = document.createElement('article');
+        item.className = 'card shadow reveal';
+        item.innerHTML = `
+          <h3 style="font-size:18px">${p.title}</h3>
+          <p class="muted" style="margin-top:8px;font-size:14px">${p.summary}</p>
+          <div class="row" style="margin-top:10px">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+          <div class="grid two" style="margin-top:12px">${p.impact.map(i=>kpi(i.label,i.value)).join('')}</div>
+          ${p.links? `<div class="row" style="margin-top:12px">${p.links.map(l=>`<a class="pill" href="${l.href}">↗ ${l.label}</a>`).join('')}</div>` : ''}
+        `;
+        grid.appendChild(item);
+      });
+    }
+
+    renderTags();
+    renderProjects();
+  </script>
+</body>
+</html>
