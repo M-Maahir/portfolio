@@ -5,49 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Maahir Mitayeegiri – Portfolio</title>
   <meta name="description" content="AI Engineer • NLP & CV – Portfolio of Maahir Mitayeegiri" />
-  <style>
-    :root{
-      --bg:#0a0a0a; --bg-soft:#111; --card:#141414; --text:#f5f5f5; --muted:#c9c9c9; --border:#262626;
-      --accent1:#fb923c; --accent2:#fb7185; --accent3:#e879f9;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica Neue,Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--text);background:radial-gradient(ellipse at top,rgba(255,100,50,.12),transparent 60%),radial-gradient(ellipse at bottom,rgba(255,0,120,.10),transparent 60%),var(--bg);}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:0 16px}
-    .border{border:1px solid var(--border)}
-    .btn{border:1px solid var(--border);border-radius:16px;padding:8px 12px;display:inline-flex;gap:8px;align-items:center;background:transparent;cursor:pointer;color:var(--text)}
-    .btn:hover{background:rgba(255,255,255,.05)}
-    .tag{font-size:12px;border:1px solid var(--border);border-radius:999px;padding:4px 8px}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));border:1px solid var(--border);border-radius:20px;padding:20px}
-    header.sticky{position:sticky;top:0;z-index:20;backdrop-filter:blur(8px);background:rgba(10,10,10,.6);border-bottom:1px solid var(--border)}
-    nav a{opacity:.85}
-    nav a:hover{opacity:1}
-    h1{font-size:40px;line-height:1.1;margin:8px 0 0}
-    h2{font-size:28px;margin:0 0 8px}
-    h3{margin:0}
-    p{color:#e5e5e5}
-    .muted{color:var(--muted)}
-    .grid{display:grid;gap:16px}
-    .kpi{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--border);border-radius:16px;padding:12px}
-    .section{scroll-margin-top:96px;padding:56px 0}
-    .pill{border:1px solid var(--border);border-radius:999px;padding:8px 12px;display:inline-flex;gap:8px;align-items:center}
-    .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-    .between{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-    .skills li{list-style:none;border:1px solid var(--border);border-radius:12px;padding:8px 12px}
-    .skills ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:0;margin:0}
-    .progress{height:8px;background:#1f1f1f;border-radius:999px;overflow:hidden}
-    .progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2),var(--accent3))}
-    .hero-grad{background:linear-gradient(90deg,var(--accent1),var(--accent2),var(--accent3));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .projects{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
-    .shadow:hover{box-shadow:0 20px 40px rgba(240,171,252,.08)}
-    footer{padding:40px 0;color:#b7b7b7}
-    @media (min-width:768px){h1{font-size:64px} .kpis{grid-template-columns:repeat(4,1fr)} .two{grid-template-columns:repeat(2,1fr)} .three{grid-template-columns:repeat(3,1fr)}}
-    /* simple fade-up */
-    .reveal{opacity:0;transform:translateY(8px);animation:reveal .5s ease forwards}
-    @keyframes reveal{to{opacity:1;transform:none}}
-    /* hidden helper */
-    .hidden{display:none !important}
-  </style>
+  <link rel="stylesheet" href="sample.css"/>
 </head>
 <body>
   <!-- Header / Nav -->
@@ -80,7 +38,7 @@
       </h1>
       <p style="max-width:640px;margin-top:12px">Graduate AI student building real‑time ML systems with measurable impact — from inappropriate content detection to sign language translation.</p>
       <div class="grid kpis" style="margin-top:20px">
-        <div class="kpi"><span class="muted" style="font-size:14px">Deployed Latency</span><b>20 ms/frame</b></div>
+        <div class="kpi"><span class="muted" style="font-size:14px">Deployed Latency</span><i>20 ms/frame</i></div>
         <div class="kpi"><span class="muted" style="font-size:14px">Verification Acc.</span><b>92%</b></div>
         <div class="kpi"><span class="muted" style="font-size:14px">Publications</span><b>2</b></div>
         <div class="kpi"><span class="muted" style="font-size:14px">Stacks</span><b>PyTorch • TF</b></div>
@@ -228,65 +186,10 @@
         <a class="btn" href="https://github.com/M-Maahir">GitHub</a>
         <a class="btn" href="https://linkedin.com/in/m-maahir">LinkedIn</a>
       </div>
+      
     </section>
-
     <footer class="muted">Built with plain HTML & CSS (<i>no React</i>)</footer>
   </main>
-
-  <script>
-    // ---- Simple dark toggle (body class) ----
-    const themeBtn = document.getElementById('themeBtn');
-    themeBtn?.addEventListener('click',()=>{
-      document.documentElement.classList.toggle('light');
-    });
-
-    // ---- Projects data + render ----
-    const projects = [
-      {id:"yt-moderation", title:"Inappropriate Content Detection for YouTube Streams", tags:["Deep Learning","Real-time","Computer Vision"], summary:"End-to-end system — data pipeline (5k+ clips), model training, and live inference with 20 ms/frame latency.", impact:[{label:"Precision",value:"90%"},{label:"Recall",value:"88%"},{label:"F1",value:"0.89"},{label:"Latency",value:"20 ms"}], links:[{href:"https://doi.org/10.10543/f0299.2023.41841",label:"Paper"}]},
-      {id:"sign-transformer", title:"Sign Language Transformer using Spatial Representations", tags:["Transformer","NLP","CV"], summary:"Joint sign→gloss and gloss→text translation on PHOENIX‑2014T with spatial‑temporal encoders.", impact:[{label:"Dataset",value:"PHOENIX‑2014T"},{label:"Tasks",value:"S2G, G2T, S2G2T"}], links:[{href:"https://wseas.com/journals/ew/2024/a42engw-018(2024).pdf",label:"Paper"}]},
-      {id:"siamese-face", title:"Siamese CNN Face Verification", tags:["Metric Learning","CNN","Contrastive Loss"], summary:"Twin‑network embeddings trained with contrastive loss; robust on <500 images with 92% verification accuracy.", impact:[{label:"Accuracy",value:"92%"},{label:"Data",value:"<500 imgs"}]},
-      {id:"gas-iot", title:"$20 Gas Leak Detection & Alerting (IoT)", tags:["IoT","Embedded","ESP‑01"], summary:"555 Timer + ESP‑01 stack that emails alerts within ~5s of leak detection; Arduino‑based firmware.", impact:[{label:"Response",value:"<5s"},{label:"Cost",value:"<$20"}]}
-    ];
-
-    const tagSet = new Set(["All"]); projects.forEach(p=>p.tags.forEach(t=>tagSet.add(t)));
-
-    const tagBar = document.getElementById('tagBar');
-    const grid = document.getElementById('projectsGrid');
-
-    function renderTags(active="All"){
-      tagBar.innerHTML = "";
-      [...tagSet].forEach(t=>{
-        const btn = document.createElement('button');
-        btn.className = 'btn';
-        if(t===active) btn.style.background = 'rgba(255,255,255,.08)';
-        btn.textContent = t; btn.onclick = ()=>{renderTags(t); renderProjects(t)};
-        tagBar.appendChild(btn);
-      });
-    }
-
-    function kpi(label,value){
-      return `<div class="kpi"><span class="muted" style="font-size:14px">${label}</span><b>${value}</b></div>`
-    }
-
-    function renderProjects(activeTag="All"){
-      grid.innerHTML = '';
-      const list = activeTag==='All' ? projects : projects.filter(p=>p.tags.includes(activeTag));
-      list.forEach(p=>{
-        const item = document.createElement('article');
-        item.className = 'card shadow reveal';
-        item.innerHTML = `
-          <h3 style="font-size:18px">${p.title}</h3>
-          <p class="muted" style="margin-top:8px;font-size:14px">${p.summary}</p>
-          <div class="row" style="margin-top:10px">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
-          <div class="grid two" style="margin-top:12px">${p.impact.map(i=>kpi(i.label,i.value)).join('')}</div>
-          ${p.links? `<div class="row" style="margin-top:12px">${p.links.map(l=>`<a class="pill" href="${l.href}">↗ ${l.label}</a>`).join('')}</div>` : ''}
-        `;
-        grid.appendChild(item);
-      });
-    }
-
-    renderTags();
-    renderProjects();
-  </script>
+  <!-- <script src=".js"></script> -->
 </body>
 </html>
