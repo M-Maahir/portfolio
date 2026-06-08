@@ -1,222 +1,417 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Maahir Mitayeegiri – Portfolio</title>
-  <meta name="description" content="AI Engineer • NLP & CV – Portfolio of Maahir Mitayeegiri" />
-  <link rel="stylesheet" href="sample.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Maahir Mitayeegiri — AI Engineer specializing in computer vision, deep learning, and end-to-end AI systems." />
+  <title>Maahir Mitayeegiri | AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Header / Nav -->
-  <header class="sticky">
-    <div class="container between" style="padding:12px 16px;">
-      <a href="#top" style="font-weight:700;letter-spacing:.2px">Maahir Mitayeegiri</a>
-      <nav class="row" style="gap:20px;font-size:14px">
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#publications">Publications</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="row">
-        <button id="themeBtn" class="btn" aria-label="Toggle theme">☀️/🌙</button>
-        <a class="btn" href="https://github.com/M-Maahir" aria-label="GitHub">GitHub</a>
-        <a class="btn" href="https://linkedin.com/in/m-maahir" aria-label="LinkedIn">LinkedIn</a>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">MM</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="container hero-content">
+      <p class="hero-eyebrow fade-up">AI Engineer · Computer Vision · Deep Learning</p>
+      <h1 class="hero-title fade-up">
+        Maahir<br />
+        <span class="gradient-text">Mitayeegiri</span>
+      </h1>
+      <p class="hero-subtitle fade-up">
+        Building scalable, data-driven AI systems — from IVR solutions to
+        <span id="typedText"></span><span class="typed-cursor">|</span>
+      </p>
+      <div class="hero-actions fade-up">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+      <div class="hero-stats fade-up">
+        <div class="stat">
+          <span class="stat-value" data-count="3.967">0</span>
+          <span class="stat-label">GPA (MS AI)</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" data-count="30" data-suffix="%">0</span>
+          <span class="stat-label">Faster Data Prep</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" data-count="2">0</span>
+          <span class="stat-label">AI Internships</span>
+        </div>
       </div>
     </div>
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+      <span></span>
+    </a>
   </header>
 
-  <main id="top" class="container">
-    <!-- Hero -->
-    <section class="section reveal">
-      <p class="muted" style="text-transform:uppercase;letter-spacing:.2em;font-size:12px">Portfolio</p>
-      <h1>
-        <span class="hero-grad">AI Engineer • NLP & CV</span><br/>
-        Maahir Mitayeegiri
-      </h1>
-      <p style="max-width:640px;margin-top:12px">Graduate AI student building real‑time ML systems with measurable impact — from inappropriate content detection to sign language translation.</p>
-      <div class="grid kpis" style="margin-top:20px">
-        <div class="kpi"><span class="muted" style="font-size:14px">Deployed Latency</span><i>20 ms/frame</i></div>
-        <div class="kpi"><span class="muted" style="font-size:14px">Verification Acc.</span><b>92%</b></div>
-        <div class="kpi"><span class="muted" style="font-size:14px">Publications</span><b>2</b></div>
-        <div class="kpi"><span class="muted" style="font-size:14px">Stacks</span><b>PyTorch • TF</b></div>
-      </div>
-      <div class="row" style="margin-top:16px">
-        <a class="pill" href="mailto:Mmitayeegiri2024@fau.edu">📧 Mmitayeegiri2024@fau.edu</a>
-        <span class="pill">📞 +1 (561) 961‑9863</span>
-        <span class="pill">📍 USA</span>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="section reveal">
-      <div class="between" style="margin-bottom:16px">
-        <h2>Projects</h2>
-      </div>
-      <div id="tagBar" class="row" style="margin-bottom:12px"></div>
-
-      <div id="projectsGrid" class="grid projects">
-        <!-- Algo Visualizer -->
-        <div class="project-card border">
-          <img src="images/algo-visualizer.png" alt="Algo Visualizer Screenshot" class="project-img">
-          <div class="project-content">
-            <h3>Algo Visualizer</h3>
-            <p>A web-based tool to visualize classic algorithms like sorting, searching, and graph traversals interactively.</p>
-            <div class="project-links">
-              <a href="https://github.com/yourusername/algo-visualizer" target="_blank" class="btn">GitHub</a>
-              <a href="https://yourusername.github.io/algo-visualizer/" target="_blank" class="btn">Live Demo</a>
+  <main>
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">01</span>
+          <h2 class="section-title">About Me</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              Mid-level AI Engineer with hands-on expertise in computer vision and
+              end-to-end AI system development. Skilled in building IVR-based solutions
+              and optimizing image-processing and deep-learning workflows in MATLAB and
+              Python.
+            </p>
+            <p>
+              I reduced dataset preparation time by <strong>30%</strong> and accelerated
+              model iteration through reproducible pipelines, vectorized operations, and
+              rigorous experimentation. Ready to deliver scalable, data-driven AI
+              solutions.
+            </p>
+          </div>
+          <div class="about-cards reveal">
+            <div class="info-card">
+              <span class="info-icon">📍</span>
+              <div>
+                <h3>Location</h3>
+                <p>Florida, USA</p>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <!-- Chatbot -->
-        <div class="project-card border">
-          <img src="images/chatbot.png" alt="Chatbot Screenshot" class="project-img">
-          <div class="project-content">
-            <h3>Chatbot</h3>
-            <p>An AI-powered chatbot built using Python and FastAPI that handles natural language queries with contextual awareness.</p>
-            <div class="project-links">
-              <a href="https://github.com/yourusername/chatbot" target="_blank" class="btn">GitHub</a>
-              <a href="https://yourusername-chatbot-demo.netlify.app" target="_blank" class="btn">Live Demo</a>
+            <div class="info-card">
+              <span class="info-icon">🎓</span>
+              <div>
+                <h3>Degree</h3>
+                <p>M.S. Artificial Intelligence</p>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Skills -->
-    <section id="skills" class="section reveal">
-      <h2>Skills</h2>
-      <div class="grid two" style="align-items:center">
-        <div class="skills">
-          <ul>
-            <li>Python</li>
-            <li>Java</li>
-            <li>C/C++</li>
-            <li>MATLAB</li>
-            <li>SQL</li>
-            <li>R</li>
-            <li>PyTorch</li>
-            <li>TensorFlow</li>
-            <li>Spark</li>
-            <li>LangChain</li>
-            <li>NumPy / Pandas</li>
-            <li>Matplotlib / SciPy</li>
-            <li>HTML / CSS / JS</li>
-            <li>Streamlit</li>
-            <li>Git</li>
-            <li>CUDA</li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="row" style="justify-content:space-between"><b>Skill Radar (linear)</b><span class="muted" style="font-size:12px">Scaled bars</span></div>
-          <div style="margin-top:12px;display:grid;gap:10px">
-            <div><div class="between"><span class="muted">Python</span><span>92</span></div><div class="progress"><i style="width:92%"></i></div></div>
-            <div><div class="between"><span class="muted">PyTorch</span><span>85</span></div><div class="progress"><i style="width:85%"></i></div></div>
-            <div><div class="between"><span class="muted">TensorFlow</span><span>78</span></div><div class="progress"><i style="width:78%"></i></div></div>
-            <div><div class="between"><span class="muted">NLP</span><span>88</span></div><div class="progress"><i style="width:88%"></i></div></div>
-            <div><div class="between"><span class="muted">CV</span><span>84</span></div><div class="progress"><i style="width:84%"></i></div></div>
-            <div><div class="between"><span class="muted">Data Eng</span><span>72</span></div><div class="progress"><i style="width:72%"></i></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience" class="section reveal">
-      <h2>Experience</h2>
-      <div class="grid" style="gap:16px">
-        <div class="card">
-          <div class="between"><h3>AI Intern • MathWorks</h3><span class="muted" style="font-size:14px">May 2023 – Sep 2023</span></div>
-          <ul style="margin:12px 0 0 18px">
-            <li>Completed 5 modules: MATLAB, Image/Signal Processing, ML, Deep Learning</li>
-            <li>Hands‑on with classification, segmentation, regression; documented findings and optimized workflows</li>
-            <li>Built strong analysis & reporting habits for clarity and reproducibility</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education" class="section reveal">
-      <h2>Education</h2>
-      <div class="grid two">
-        <div class="card">
-          <h3>M.S. in Artificial Intelligence</h3>
-          <p class="muted">Florida Atlantic University</p>
-          <p class="muted" style="font-size:12px">Aug 2024 – May 2026</p>
-          <ul style="margin-left:18px">
-            <li>GPA: 3.89/4.0</li>
-            <li>Courses: Deep Learning, NLP, Big Data, Generative AI, LLMs, Prompt Engineering</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>M.Tech in Electronics & Communication</h3>
-          <p class="muted">Jawaharlal Nehru Technological University</p>
-          <p class="muted" style="font-size:12px">Aug 2023 – Aug 2024</p>
-          <ul style="margin-left:18px">
-            <li>Courses: Data Analytics, Adaptive Systems, High‑Performance & Parallel Computing</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>B.Tech in Electronics & Communication</h3>
-          <p class="muted">Jawaharlal Nehru Technological University</p>
-          <p class="muted" style="font-size:12px">Aug 2019 – Aug 2023</p>
-          <ul style="margin-left:18px">
-            <li>Courses: Computer Networks, Signal Processing, Design & Analysis of Algorithms</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Publications -->
-    <section id="publications" class="section reveal">
-      <h2>Publications</h2>
-      <ol style="padding-left:22px">
-        <li style="margin-bottom:10px"><b>A Deep Learning‑Based Approach for Inappropriate Content Detection and Classification of YouTube Videos</b> — <span class="muted">mst, vol. 22, no. 12, pp. 164–168, 2023</span> <a class="pill" href="https://doi.org/10.10543/f0299.2023.41841">link ↗</a></li>
-        <li><b>Sign Language Transformer using Spatial Representations</b> — <span class="muted">Engineering World, vol. 6, 2024</span> <a class="pill" href="https://wseas.com/journals/ew/2024/a42engw-018(2024).pdf">link ↗</a></li>
-      </ol>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section reveal">
-      <h2>Contact</h2>
-      <div class="grid three">
-        <a class="card shadow" href="mailto:Mmitayeegiri2024@fau.edu">
-          <div class="row"><span>📧</span>
-            <div>
-              <div class="muted" style="font-size:14px">Email</div>
-              <div><b>Mmitayeegiri2024@fau.edu</b></div>
+            <div class="info-card">
+              <span class="info-icon">🔬</span>
+              <div>
+                <h3>Focus</h3>
+                <p>Computer Vision & GenAI</p>
+              </div>
             </div>
-          </div>
-        </a>
-        <div class="card shadow">
-          <div class="row"><span>📞</span>
-            <div>
-              <div class="muted" style="font-size:14px">Phone</div>
-              <div><b>+1 (561) 961‑9863</b></div>
-            </div>
-          </div>
-        </div>
-        <div class="card shadow">
-          <div class="row"><span>📍</span>
-            <div>
-              <div class="muted" style="font-size:14px">Location</div>
-              <div><b>USA</b></div>
+            <div class="info-card">
+              <span class="info-icon">📄</span>
+              <div>
+                <h3>Published</h3>
+                <p>Sign Language Transformer</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row" style="margin-top:16px">
-        <a class="btn" href="https://github.com/M-Maahir">GitHub</a>
-        <a class="btn" href="https://linkedin.com/in/m-maahir">LinkedIn</a>
+    </section>
+
+    <section class="section section-alt" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">02</span>
+          <h2 class="section-title">Experience</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="timeline-date">May 2023 – May 2024</span>
+                <span class="timeline-location">Hyderabad, AP, India</span>
+              </div>
+              <h3>AI Intern</h3>
+              <p class="timeline-company">MathWorks</p>
+              <ul>
+                <li>Built image-processing and AI pipelines in MATLAB with preprocessing, feature extraction, augmentation, and evaluation for classification, segmentation, and regression workflows.</li>
+                <li>Optimized deep learning training and inference by tuning architectures, hyperparameters, and data pipelines with vectorized operations.</li>
+                <li>Automated dataset preparation with label checks, batch transforms, and metrics reporting — cutting manual processing time by 30%.</li>
+                <li>Presented model performance insights (accuracy/IoU, error analysis) with clear documentation for deployment-ready decisions.</li>
+                <li>Leveraged LLM coding assistants daily while maintaining code quality through critical review.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="timeline-date">Jan 2023 – May 2023</span>
+                <span class="timeline-location">Hyderabad, TG, India</span>
+              </div>
+              <h3>Intern</h3>
+              <p class="timeline-company">Telangana Government MSME Program</p>
+              <ul>
+                <li>Built an IVR-based farmer assistance system enabling agricultural produce listing via basic phone calls — no smartphone or internet required.</li>
+                <li>Designed end-to-end call flow (voice prompts, menu routing, input validation) using XML scripts and C, capturing crop type, quantity, location, and price.</li>
+                <li>Implemented backend logging and reporting for tracking call outcomes and produce submissions to monitor adoption.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
       </div>
-      
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">03</span>
+          <h2 class="section-title">Projects</h2>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card reveal" data-color="#6366f1">
+            <div class="project-icon">🤖</div>
+            <h3>Multi-Agent Developer Assistant</h3>
+            <p>Engineered "Curiosity," an agentic GenAI Discord assistant with RAG pipeline indexing official documentation to reduce hallucinations.</p>
+            <ul class="project-highlights">
+              <li>Multi-agent orchestration layer</li>
+              <li>Structured output validation & guardrails</li>
+              <li>Reproducible Jupyter notebooks</li>
+            </ul>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>RAG</span>
+              <span>GenAI</span>
+              <span>Discord</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-color="#8b5cf6">
+            <div class="project-icon">🤟</div>
+            <h3>Sign Language Transformer</h3>
+            <p>Transformer-based sign-language translation converting continuous videos into readable text using spatial video representations on PHOENIX-2014T.</p>
+            <ul class="project-highlights">
+              <li>Multi-stage PyTorch pipeline</li>
+              <li>Sign-to-gloss + gloss-to-text</li>
+              <li>Published in Engineering World, 2024</li>
+            </ul>
+            <div class="project-tags">
+              <span>PyTorch</span>
+              <span>Transformers</span>
+              <span>Computer Vision</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-color="#06b6d4">
+            <div class="project-icon">🔒</div>
+            <h3>Serverless Secure File Sharing</h3>
+            <p>Secure file-transfer service using S3 presigned URLs with least-privilege IAM, encrypted storage, and CloudTrail auditing.</p>
+            <ul class="project-highlights">
+              <li>Time-limited presigned URLs</li>
+              <li>Strict bucket policies</li>
+              <li>CloudTrail monitoring & alerts</li>
+            </ul>
+            <div class="project-tags">
+              <span>AWS</span>
+              <span>S3</span>
+              <span>IAM</span>
+              <span>CloudTrail</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">04</span>
+          <h2 class="section-title">Skills</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-category reveal">
+            <h3>AI / ML & Data Science</h3>
+            <div class="skill-tags">
+              <span>PyTorch</span>
+              <span>TensorFlow</span>
+              <span>Keras</span>
+              <span>Scikit-learn</span>
+              <span>Computer Vision</span>
+              <span>NLP</span>
+              <span>Generative AI</span>
+              <span>OpenCV</span>
+              <span>MATLAB</span>
+              <span>CUDA</span>
+              <span>Pandas</span>
+              <span>NumPy</span>
+              <span>Matplotlib</span>
+              <span>NLTK</span>
+              <span>Tableau</span>
+              <span>Jupyter</span>
+            </div>
+          </div>
+          <div class="skill-category reveal">
+            <h3>Programming Languages</h3>
+            <div class="skill-tags">
+              <span>Python</span>
+              <span>Java</span>
+              <span>C</span>
+              <span>C++</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+          <div class="skill-category reveal">
+            <h3>Web & Software Development</h3>
+            <div class="skill-tags">
+              <span>React Native</span>
+              <span>Next.js</span>
+              <span>Node.js</span>
+              <span>FastAPI</span>
+              <span>Django</span>
+              <span>HTML/CSS</span>
+              <span>XML</span>
+            </div>
+          </div>
+          <div class="skill-category reveal">
+            <h3>Cloud & DevOps</h3>
+            <div class="skill-tags">
+              <span>AWS</span>
+              <span>Azure</span>
+              <span>GCP</span>
+              <span>Linux</span>
+              <span>SQL</span>
+              <span>MySQL</span>
+              <span>PostgreSQL</span>
+              <span>NoSQL</span>
+              <span>Agile</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">05</span>
+          <h2 class="section-title">Education</h2>
+        </div>
+        <div class="education-grid">
+          <article class="edu-card reveal">
+            <div class="edu-badge">2024 – 2025</div>
+            <h3>Master's, Artificial Intelligence</h3>
+            <p class="edu-school">Florida Atlantic University</p>
+            <p class="edu-gpa">GPA: <strong>3.967</strong></p>
+            <p class="edu-coursework">Generative AI (LLMs), Deep Learning, Data Science, Cloud Computing, Computer Vision, Data Engineering</p>
+          </article>
+          <article class="edu-card reveal">
+            <div class="edu-badge">2022 – 2024</div>
+            <h3>Master's, Electronics & Communication Engineering</h3>
+            <p class="edu-school">Jawaharlal Nehru Technological University</p>
+            <p class="edu-gpa">GPA: <strong>8.1</strong></p>
+            <p class="edu-coursework">Machine Learning, Reinforcement Learning, Embedded AI, Advanced DSP, Adaptive Systems</p>
+          </article>
+          <article class="edu-card reveal">
+            <div class="edu-badge">2019 – 2022</div>
+            <h3>Bachelor's, Electronics & Communication Engineering</h3>
+            <p class="edu-school">JNTU Hyderabad</p>
+            <p class="edu-gpa">GPA: <strong>7.0</strong></p>
+            <p class="edu-coursework">Data Structures & Algorithms, Computer Networks, Information Theory, IoT, Mobile Networks, DSP</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="publications">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">06</span>
+          <h2 class="section-title">Publications</h2>
+        </div>
+        <article class="publication-card reveal">
+          <div class="pub-year">2024</div>
+          <div class="pub-content">
+            <h3>Sign Language Transformer using Spatial Representations</h3>
+            <p class="pub-authors">M. Maahir, K. Anitha Sheela, N. Sathwik, J. Sandhya</p>
+            <p class="pub-journal"><em>Engineering World</em>, vol. 6, pp. 195–204, 2024</p>
+            <a href="https://doi.org/10.37394/232025.2024.6.21" target="_blank" rel="noopener noreferrer" class="pub-doi">
+              DOI: 10.37394/232025.2024.6.21 →
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">07</span>
+          <h2 class="section-title">Contact</h2>
+        </div>
+        <div class="contact-grid reveal">
+          <div class="contact-info">
+            <h3>Let's build something intelligent.</h3>
+            <p>Open to AI engineering roles, research collaborations, and impactful projects in computer vision and generative AI.</p>
+            <div class="contact-links">
+              <a href="mailto:maahir.m27@gmail.com" class="contact-link">
+                <span class="contact-link-icon">✉</span>
+                maahir.m27@gmail.com
+              </a>
+              <a href="tel:+15619619863" class="contact-link">
+                <span class="contact-link-icon">📞</span>
+                +1 (561) 961-9863
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <span class="contact-link-icon">💼</span>
+                LinkedIn
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <span class="contact-link-icon">⌨</span>
+                GitHub
+              </a>
+            </div>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+            <p class="form-note" id="formNote"></p>
+          </form>
+        </div>
+      </div>
     </section>
   </main>
-  <!-- <script src=".js"></script> -->
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Maahir Mitayeegiri. Built with HTML, CSS & JavaScript.</p>
+      <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
