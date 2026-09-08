@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
   initNavigation();
   initTypingEffect();
   initScrollReveal();
@@ -8,6 +9,33 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackToTop();
   initActiveNavLink();
 });
+
+function getTheme() {
+  return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+}
+
+function applyTheme(theme) {
+  const next = theme === 'light' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  try {
+    localStorage.setItem('theme', next);
+  } catch (e) {}
+
+  const btn = document.getElementById('themeSwitch');
+  if (!btn) return;
+  const isLight = next === 'light';
+  btn.setAttribute('aria-checked', String(isLight));
+  btn.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+}
+
+function initTheme() {
+  applyTheme(getTheme());
+  const btn = document.getElementById('themeSwitch');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    applyTheme(getTheme() === 'light' ? 'dark' : 'light');
+  });
+}
 
 function setActiveNavLink(id) {
   document.querySelectorAll('.nav-links a').forEach(link => {
