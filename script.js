@@ -9,6 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initActiveNavLink();
 });
 
+function setActiveNavLink(id) {
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    const href = (link.getAttribute('href') || '').toLowerCase();
+    link.classList.toggle('active', href === `#${id.toLowerCase()}`);
+  });
+}
+
 function initNavigation() {
   const nav = document.getElementById('nav');
   const navToggle = document.getElementById('navToggle');
@@ -24,9 +31,23 @@ function initNavigation() {
   });
 
   navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href') || '';
+      const id = href.startsWith('#') ? href.slice(1) : '';
+      const target = id
+        ? document.getElementById(id) || document.getElementById(id.toLowerCase())
+        : null;
+
       navToggle.classList.remove('open');
       navLinks.classList.remove('open');
+
+      if (!target) return;
+
+      e.preventDefault();
+      setActiveNavLink(target.id);
+      lockNavHighlight();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.pushState(null, '', `#${target.id}`);
     });
   });
 }
@@ -54,7 +75,7 @@ function initTypingEffect() {
       charIndex++;
     }
 
-    let delay = isDeleting ? 40 : 80;
+    let delay = isDeleting ? 30 : 80;
 
     if (!isDeleting && charIndex === current.length) {
       delay = 2000;
@@ -80,7 +101,7 @@ function initScrollReveal() {
         if (entry.isIntersecting) {
           setTimeout(() => {
             entry.target.classList.add('visible');
-          }, i * 80);
+          }, i * 200);
           observer.unobserve(entry.target);
         }
       });
@@ -117,7 +138,7 @@ function initCounterAnimation() {
     const duration = 2000;
     const start = performance.now();
 
-    function update(now) {
+    function updateMaahir(now) {
       const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
@@ -127,10 +148,10 @@ function initCounterAnimation() {
         ? current.toFixed(3) + suffix
         : Math.floor(current) + suffix;
 
-      if (progress < 1) requestAnimationFrame(update);
+      if (progress < 1) requestAnimationFrame(updateMaahir);
     }
 
-    requestAnimationFrame(update);
+    requestAnimationFrame(updateMaahir);
   }
 }
 
@@ -201,23 +222,41 @@ function initBackToTop() {
   });
 }
 
-function initActiveNavLink() {
-  const sections = document.querySelectorAll('section[id], header[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
+let navHighlightLockedUntil = 0;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.id;
-          navLinks.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-          });
-        }
-      });
-    },
-    { threshold: 0.3, rootMargin: '-80px 0px -60% 0px' }
-  );
-
-  sections.forEach(section => observer.observe(section));
+function lockNavHighlight(ms = 1000) {
+  navHighlightLockedUntil = Date.now() + ms;
 }
+
+function initActiveNavLink() {
+  const sections = [...document.querySelectorAll('section[id], header[id]')];
+  const navOffset = () => {
+    const nav = document.getElementById('nav');
+    return (nav ? nav.offsetHeight : 80) + 8;
+  };
+
+  function sectionDocumentTop(section) {
+    return section.getBoundingClientRect().top + window.scrollY;
+  }
+
+  function updateActiveFromScroll() {
+    if (Date.now() < navHighlightLockedUntil) return;
+
+    const y = window.scrollY + Math.max(navOffset(), window.innerHeight * 0.33);
+    let current = sections[0];
+
+    sections.forEach(section => {
+      if (sectionDocumentTop(section) <= y) current = section;
+    });
+
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+      current = sections[sections.length - 1];
+    }
+
+    if (current) setActiveNavLink(current.id);
+  }
+
+  window.addEventListener('scroll', updateActiveFromScroll, { passive: true });
+  updateActiveFromScroll();
+}
+
